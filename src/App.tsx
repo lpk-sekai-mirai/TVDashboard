@@ -1,4 +1,4 @@
-import ChannelTV from "./components/ChannelTV";
+import Channel from "./components/channel";
 import Event from "./components/event";
 import ParticipantInfo from "./components/aside";
 import Contact from "./components/contact";
@@ -12,7 +12,7 @@ function App() {
       <div className="grid grid-cols-5 gap-2">
         {/* Left */}
         <section className="col-span-3 flex flex-col gap-2">
-          <ChannelTV />
+          <Channel />
           <Event />
         </section>
         {/* Right */}
