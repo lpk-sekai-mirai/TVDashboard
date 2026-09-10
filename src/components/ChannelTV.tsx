@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import testingVideo from "../assets/testing.mp4";
 
 function ChannelTV() {
   const [dateTime, setDateTime] = useState(new Date());

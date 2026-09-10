@@ -1,78 +1,138 @@
-# React + TypeScript + Vite
+# LPK Information Display
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website informasi digital untuk menampilkan berbagai informasi dari **LPK (Lembaga Pelatihan Kerja)** dalam satu tampilan yang sederhana dan mudah dipantau.
 
-Currently, two official plugins are available:
+Project ini dibuat menggunakan React dan Tailwind CSS dengan konsep **information display/dashboard**, sehingga dapat digunakan pada monitor atau TV sebagai media informasi di lingkungan LPK.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+* 📺 **Channel TV**
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+  * Menampilkan konten video/informasi pada area utama.
+* 📅 **Event**
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+  * Menampilkan informasi kegiatan atau event LPK.
+* 👤 **Participant Information**
 
-## Expanding the ESLint configuration
+  * Menampilkan informasi peserta/alumni.
+* 📞 **Contact**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+  * Menampilkan informasi kontak LPK.
+* 📱 **Responsive Layout**
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+  * Menggunakan layout berbasis CSS Grid dan Flexbox.
+* 🖥️ **Display Mode**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+  * Dirancang agar dapat digunakan pada layar monitor atau TV.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Tech Stack
 
+* **React**
+* **TypeScript**
+* **Tailwind CSS**
+* **Vite**
+* **ESLint**
+
+## 📂 Project Structure
+
+```text
+src/
+├── assets/
+├── components/
+│   ├── aside.tsx
+│   ├── ChannelTV.tsx 
+│   ├── contact.tsx 
+│   ├── event.tsx
+│   └── footer.tsx
+├── App.tsx
+├── index.css
+└── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Clone repository:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone <repository-url>
 ```
+
+Masuk ke folder project:
+
+```bash
+cd <project-folder>
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Jalankan development server:
+
+```bash
+npm run dev
+```
+
+Kemudian buka alamat yang diberikan oleh Vite, biasanya:
+
+```text
+http://localhost:5173
+```
+
+## 🌐 Menjalankan melalui Network
+
+Project juga dapat diakses dari perangkat lain yang berada dalam jaringan yang sama.
+
+Jalankan:
+
+```bash
+npm run dev -- --host
+```
+
+Vite akan menampilkan alamat seperti:
+
+```text
+Network: http://192.168.x.x:5173/
+```
+
+Alamat tersebut dapat dibuka melalui laptop atau perangkat lain yang terhubung ke jaringan yang sama.
+
+## 📦 Build untuk Production
+
+Untuk membuat production build:
+
+```bash
+npm run build
+```
+
+Untuk melihat hasil production build secara lokal:
+
+```bash
+npm run preview
+```
+
+## 🎯 Purpose
+
+Project ini dibuat sebagai media **digital information display** untuk membantu LPK menampilkan informasi secara terpusat pada layar, seperti:
+
+* Informasi peserta/alumni
+* Jadwal atau event
+* Konten video
+* Informasi kontak
+* Informasi lainnya yang berkaitan dengan kegiatan LPK
+
+## 📌 Status
+
+> 🚧 Project masih dalam tahap pengembangan.
+
+Beberapa fitur dan tampilan masih dapat dikembangkan dan disesuaikan dengan kebutuhan LPK.
+
+## 👨‍💻 Developer
+
+Developed by **ARIP**
+
+---
+
+© 2026 LPK Sekai Mirai Cemerlang Indonesia
