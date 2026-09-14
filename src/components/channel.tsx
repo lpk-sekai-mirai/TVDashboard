@@ -8,7 +8,7 @@ interface Channel {
 const channels: Channel[] = [
   { name: "Kompas TV", videoId: "DOOrIxw5xOw" },
   { name: "CNN Indonesia", videoId: "PDDOkUq33Sw" },
-  { name: "TVRI Nasional", videoId: "QqSJlAU" },
+  // { name: "TVRI Nasional", videoId: "QqSJlAU" },
   { name: "NHK Japan", videoId: "IimtbuqYIE8" },
 ];
 
