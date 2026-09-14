@@ -118,7 +118,7 @@ function ParticipantInfo() {
 
   if (loading) {
     return (
-      <aside className="rounded-2xl bg-white p-6 shadow-md">
+      <aside className="rounded-lg bg-white p-6 shadow-md">
         <p>Memuat data peserta...</p>
       </aside>
     );
@@ -126,7 +126,7 @@ function ParticipantInfo() {
 
   if (error) {
     return (
-      <aside className="rounded-2xl bg-white p-6 shadow-md">
+      <aside className="rounded-lg bg-white p-6 shadow-md">
         <p className="text-red-500">{error}</p>
       </aside>
     );
@@ -146,7 +146,7 @@ function ParticipantInfo() {
 
   return (
     <aside className="flex h-full flex-col gap-2">
-      <section className="flex-1 rounded-2xl bg-white p-6 shadow-md">
+      <section className="px-8 flex-1 rounded-lg backdrop-blur-sm bg-white shadow-md border border-black">
         {participant ? (
           <div className="grid h-full grid-cols-3 items-center gap-4">
             <div className="space-y-1">
@@ -165,7 +165,10 @@ function ParticipantInfo() {
               />
             </div>
             <div className="text-center">
-              <h2 className="text-xl font-semibold text-gray-800">
+              <h2 className="text-lg font-semibold text-gray-800">
+                参加者数
+              </h2>
+              <h2 className="text-lg font-semibold text-gray-800">
                 Jumlah Peserta
               </h2>
               <p className="mt-1 text-5xl font-bold text-gray-800">
@@ -178,7 +181,7 @@ function ParticipantInfo() {
         )}
       </section>
 
-      <section className="flex-1 rounded-2xl bg-white p-6 shadow-md">
+      <section className="flex-1 rounded-lg backdrop-blur-sm bg-white px-8 shadow-md border border-black">
         {interviewParticipant ? (
           <div className="grid h-full grid-cols-3 items-center gap-4">
             <div className="space-y-1">
@@ -201,6 +204,9 @@ function ParticipantInfo() {
             </div>
             <div className="text-center">
               <h2 className="text-lg font-semibold text-gray-800">
+                面接合格者数
+              </h2>
+              <h2 className="text-lg font-semibold text-gray-800">
                 Lulus Interview
               </h2>
               <p className="mt-1 text-5xl font-bold text-gray-800">
@@ -213,7 +219,7 @@ function ParticipantInfo() {
         )}
       </section>
 
-      <section className="flex-1 rounded-2xl bg-white p-6 shadow-md">
+      <section className="flex-1 rounded-lg backdrop-blur-sm bg-white px-8 shadow-md border border-black">
         {departedParticipant ? (
           <div className="grid h-full grid-cols-3 items-center gap-4">
             <div className="space-y-1">
@@ -247,7 +253,10 @@ function ParticipantInfo() {
             </div>
             <div className="text-center">
               <h2 className="text-lg font-semibold text-gray-800">
-                Jumlah yang Telah Berangkat ke Jepang
+                日本への出発者数
+              </h2>
+              <h2 className="text-lg font-semibold text-gray-800">
+                Jumlah yang Berangkat ke Jepang
               </h2>
               <p className="mt-1 text-5xl font-bold text-gray-800">
                 {dashboard.totalBerangkat}

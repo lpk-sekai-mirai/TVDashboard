@@ -1,5 +1,28 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "SekaiFont";
+  src: url("./assets/itc-avant.otf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@theme {
+  --font-sekai: "SekaiFont", sans-serif;
+  --color-primary: #E90111;
+  --color-primary-50: #fff1f2;
+  --color-primary-100: #ffe4e6;
+  --color-primary-200: #fecdd3;
+  --color-primary-300: #fda4af;
+  --color-primary-400: #fb7185;
+  --color-primary-500: #E90111;
+  --color-primary-600: #d00110;
+  --color-primary-700: #b0000e;
+  --color-primary-800: #90000b;
+  --color-primary-900: #700009;
+  --color-primary-950: #400005;
+}
+
 /* index.css / global CSS */
 ::-webkit-scrollbar {
   display: none;
@@ -12,3 +35,4 @@ html {
 body {
   -ms-overflow-style: none;
 }
+
