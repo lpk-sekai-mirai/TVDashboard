@@ -5,34 +5,38 @@ import Contact from "./components/contact";
 import Footer from "./components/footer";
 import Background from "./assets/img-bg.jpg";
 
-// style={{ backgroundImage: `url(${Background})` }}
-
 function App() {
   return (
-    // <main className="min-h-screen px-1 py-1" style={{ backgroundImage: `url(${Background})` }} >
     <main
-      className="font-sekai min-h-screen w-full overflow-x-hidden bg-cover bg-center px-1 py-1"
+      className="font-sekai h-screen w-screen overflow-hidden bg-cover bg-center "
       style={{ backgroundImage: `url(${Background})` }}
     >
-      <div className="flex h-full flex-col gap-4 backdrop-blur-md">
-        {/* Content utama */}
-        <div className="min-h-0 flex-1 grid grid-cols-3 gap-2">
-          {/* Left */}
-          <section className="col-span-2 min-h-0 flex flex-col gap-2">
-            <Channel />
-            <Event />
+      <div className="flex h-full min-h-0 flex-col  backdrop-blur-md">
+        {/* CONTENT UTAMA */}
+        <div className="grid min-h-0 flex-1 grid-cols-3 gap-2">
+          {/* KIRI - 2 BAGIAN */}
+          <section className="col-span-2 grid min-h-0 min-w-0 grid-rows-[minmax(0,3fr)_minmax(0,1fr)] gap-2">
+            {/* CHANNEL */}
+            <div className="min-h-0 min-w-0">
+              <Channel />
+            </div>
+
+            {/* EVENT */}
+            <div className="min-h-0 min-w-0">
+              <Event />
+            </div>
           </section>
-          {/* Right */}
-          <section className="col-span-1 min-h-0">
+
+          {/* KANAN - 1 BAGIAN */}
+          <section className="col-span-1 min-h-0 min-w-0">
             <ParticipantInfo />
           </section>
         </div>
-        {/* Contact - Full Width */}
-        <section className="shrink-0 mt-2">
-          <div className="bg-white">
-            <Contact />
-          </div>
+
+        {/* FOOTER */}
+        <section className="shrink-0 overflow-hidden">
           <Footer />
+          <Contact />
         </section>
       </div>
     </main>

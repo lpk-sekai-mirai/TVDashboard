@@ -42,16 +42,22 @@ function Event() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextArticle = () => {
-    setCurrentIndex((prev) => (prev === articles.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) =>
+      prev === articles.length - 1 ? 0 : prev + 1,
+    );
   };
 
   const prevArticle = () => {
-    setCurrentIndex((prev) => (prev === 0 ? articles.length - 1 : prev - 1));
+    setCurrentIndex((prev) =>
+      prev === 0 ? articles.length - 1 : prev - 1,
+    );
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev === articles.length - 1 ? 0 : prev + 1));
+      setCurrentIndex((prev) =>
+        prev === articles.length - 1 ? 0 : prev + 1,
+      );
     }, 8000);
 
     return () => clearInterval(interval);
@@ -60,77 +66,81 @@ function Event() {
   const article = articles[currentIndex];
 
   return (
-    <section className="relative mb-6 w-full min-w-0 rounded-2xl border bg-white px-4 py-3 shadow-md">
-      {/* Header */}
-      <div className="mb-2">
-        <h2 className="text-2xl font-bold text-gray-800">
+    <section className="grid h-full min-h-0 min-w-0 grid-cols-[1fr_3fr] gap-6 overflow-hidden rounded-xl border-2 border-gray-500 bg-white px-6 py-4">
+      {/* KOLOM KIRI */}
+      <div className="flex min-w-0 flex-col justify-center">
+        <h2 className="text-2xl font-normal leading-tight text-gray-900 2xl:text-2xl">
           Berita & Artikel | 記事
         </h2>
 
-        <p className="mt-0.5 text-sm text-gray-500">
+        <p className="mt-1 text-sm leading-tight text-gray-600 2xl:text-lg">
           Informasi kegiatan terbaru LPK
         </p>
       </div>
 
-      {/* Article */}
-      <article
-        key={article.id}
-        className="min-w-0 rounded-xl transition-all duration-500"
-      >
-        {/* Category + Date */}
-        <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-          <span className="rounded-full bg-gray-900 px-2 py-1 text-sm text-white">
+      {/* KOLOM KANAN */}
+      <div className="flex min-h-0 min-w-0 flex-col">
+        {/* CATEGORY + DATE */}
+        <div className="flex shrink-0 items-center justify-between gap-4">
+          <span className="rounded-full bg-gray-900 px-3 py-1 text-sm font-semibold text-white 2xl:text-md">
             {article.category}
           </span>
 
-          <span className="text-lg text-gray-500">{article.date}</span>
+          <span className="text-base font-semibold text-gray-900 2xl:text-lg">
+            {article.date}
+          </span>
         </div>
 
-        {/* Title */}
-        <h3 className="mb-2 line-clamp-1 text-xl font-bold leading-relaxed text-gray-800">
-          {article.title}
-        </h3>
-
-        {/* Description */}
-        <p className="line-clamp-2 text-sm leading-relaxed text-gray-600">
-          {article.description}
-        </p>
-      </article>
-
-      {/* Navigation */}
-      <div className="mt-3 flex items-center justify-between gap-3">
-        <button
-          onClick={prevArticle}
-          className="rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-semibold text-gray-700 transition hover:bg-gray-200"
-          aria-label="Artikel sebelumnya"
+        {/* ARTICLE */}
+        <article
+          key={article.id}
+          className="mt-2 min-h-0 flex-1 overflow-hidden"
         >
-          ←
-        </button>
+          <h3 className="line-clamp-2 text-xl font-bold leading-tight text-gray-900 2xl:text-xl">
+            {article.title}
+          </h3>
 
-        {/* Indicators */}
-        <div className="flex justify-center gap-2">
-          {articles.map((item, index) => (
-            <button
-              key={item.id}
-              onClick={() => setCurrentIndex(index)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                index === currentIndex
-                  ? "w-5 bg-primary-500"
-                  : "w-1.5 bg-gray-300"
-              }`}
-              aria-label={`Artikel ${index + 1}`}
-              aria-current={index === currentIndex ? "true" : undefined}
-            />
-          ))}
+          <p className="mt-3 line-clamp-2 text-sm leading-snug text-gray-700 2xl:text-md">
+            {article.description}
+          </p>
+        </article>
+
+        {/* NAVIGATION */}
+        <div className="mt-2 flex shrink-0 items-center justify-between">
+          <button
+            onClick={prevArticle}
+            className="rounded-lg bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 transition hover:bg-gray-200"
+            aria-label="Artikel sebelumnya"
+          >
+            ←
+          </button>
+
+          <div className="flex items-center justify-center gap-2">
+            {articles.map((item, index) => (
+              <button
+                key={item.id}
+                onClick={() => setCurrentIndex(index)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? "w-6 bg-primary-500"
+                    : "w-1.5 bg-gray-300"
+                }`}
+                aria-label={`Artikel ${index + 1}`}
+                aria-current={
+                  index === currentIndex ? "true" : undefined
+                }
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={nextArticle}
+            className="rounded-lg bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 transition hover:bg-gray-200"
+            aria-label="Artikel berikutnya"
+          >
+            →
+          </button>
         </div>
-
-        <button
-          onClick={nextArticle}
-          className="rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-semibold text-gray-700 transition hover:bg-gray-200"
-          aria-label="Artikel berikutnya"
-        >
-          →
-        </button>
       </div>
     </section>
   );
