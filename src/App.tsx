@@ -3,7 +3,7 @@ import Event from "./components/event";
 import ParticipantInfo from "./components/aside";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
-import Background from "./assets/img-bg.jpg";
+import Background from "./assets/img-bg.webp"
 
 function App() {
   return (

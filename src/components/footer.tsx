@@ -1,5 +1,5 @@
 
-import Logo from "../assets/logoFull.png";
+import Logo from "../assets/logoFull.webp";
 import { useEffect, useState } from "react";
 // import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 // import { FaLocationDot } from "react-icons/fa6";
