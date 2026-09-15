@@ -159,7 +159,7 @@ function ParticipantInfo() {
             </div>
             <div className="flex justify-center">
               <img
-                src={`${API_URL}${participant.foto}`}
+                src={participant.foto}
                 alt={`Foto ${participant.nama}`}
                 className="h-48 w-42 rounded-lg object-cover"
               />
@@ -197,7 +197,7 @@ function ParticipantInfo() {
             </div>
             <div className="flex justify-center">
               <img
-                src={`${API_URL}${interviewParticipant.foto}`}
+                src={interviewParticipant.foto}
                 alt={`Foto ${interviewParticipant.nama}`}
                 className="h-48 w-42 rounded-lg object-cover"
                 />
@@ -246,7 +246,7 @@ function ParticipantInfo() {
             </div>
             <div className="flex justify-center">
               <img
-                src={`${API_URL}${departedParticipant.foto}`}
+                src={departedParticipant.foto}
                 alt={`Foto ${departedParticipant.nama}`}
                 className="h-48 w-42 rounded-lg object-cover"
               />
