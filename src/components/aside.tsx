@@ -161,14 +161,14 @@ function ParticipantInfo() {
               <img
                 src={participant.foto}
                 alt={`Foto ${participant.nama}`}
-                className="h-48 w-42 rounded-lg object-cover"
+                className="h-48 w-42 object-cover"
               />
             </div>
             <div className="text-center">
               <h2 className="text-lg font-semibold text-gray-800">
                 参加者数
               </h2>
-              <h2 className="text-lg font-semibold text-gray-800">
+              <h2 className="text-lg text-gray-800">
                 Jumlah Peserta
               </h2>
               <p className="mt-1 text-5xl font-bold text-gray-800">
@@ -185,13 +185,13 @@ function ParticipantInfo() {
         {interviewParticipant ? (
           <div className="grid h-full grid-cols-3 items-center gap-4">
             <div className="space-y-1">
-              <p className="text-lg font-semibold text-gray-700">
+              <p className="text-md text-gray-700">
                   {interviewParticipant.nama}
               </p>
-              <p className="text-lg font-semibold text-gray-700">
+              <p className="text-md text-gray-700">
                   {interviewParticipant.alamat}
               </p>
-              <p className="text-lg font-semibold text-gray-700">
+              <p className="text-md text-gray-700">
                   {interviewParticipant.perusahaanLulus}
               </p>
             </div>
@@ -199,7 +199,7 @@ function ParticipantInfo() {
               <img
                 src={interviewParticipant.foto}
                 alt={`Foto ${interviewParticipant.nama}`}
-                className="h-48 w-42 rounded-lg object-cover"
+                className="h-48 w-42 object-cover"
                 />
             </div>
             <div className="text-center">
@@ -223,23 +223,23 @@ function ParticipantInfo() {
         {departedParticipant ? (
           <div className="grid h-full grid-cols-3 items-center gap-4">
             <div className="space-y-1">
-              <p className="text-lg text-gray-700">
+              <p className="text-md text-gray-700">
                 <span className="font-semibold">
                   {departedParticipant.nama}
                 </span>
               </p>
-              <p className="text-lg text-gray-700">
-                <span className="font-semibold">
+              <p className="text-md text-gray-700">
+                <span>
                   {departedParticipant.alamat}
                 </span>
               </p>
-              <p className="text-lg text-gray-700">
-                <span className="font-semibold">
+              <p className="text-md text-gray-700">
+                <span>
                   {departedParticipant.perusahaanLulus}
                 </span>
               </p>
-              <p className="text-lg text-gray-700">
-                <span className="font-semibold">
+              <p className="text-md text-gray-700">
+                <span>
                   {departedParticipant.tanggalKeberangkatan}
                 </span>
               </p>
@@ -248,7 +248,7 @@ function ParticipantInfo() {
               <img
                 src={departedParticipant.foto}
                 alt={`Foto ${departedParticipant.nama}`}
-                className="h-48 w-42 rounded-lg object-cover"
+                className="h-48 w-42 object-cover"
               />
             </div>
             <div className="text-center">
