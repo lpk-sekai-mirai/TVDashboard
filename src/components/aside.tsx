@@ -150,10 +150,10 @@ function ParticipantInfo() {
         {participant ? (
           <div className="grid h-full grid-cols-3 items-center gap-4">
             <div className="space-y-1">
-              <p className="text-lg font-semibold text-gray-700">
+              <p className="text-2xl font-semibold text-gray-700">
                   {participant.nama}
               </p>
-              <p className="text-lg font-semibold text-gray-700">
+              <p className="text-2xl font-semibold text-gray-700">
                   {participant.alamat}
               </p>
             </div>
@@ -161,14 +161,14 @@ function ParticipantInfo() {
               <img
                 src={participant.foto}
                 alt={`Foto ${participant.nama}`}
-                className="h-48 w-42 object-cover"
+                className="h-48 w-42 object-contain"
               />
             </div>
             <div className="text-center">
-              <h2 className="text-lg font-semibold text-gray-800">
+              <h2 className="text-2xl font-semibold text-gray-800">
                 参加者数
               </h2>
-              <h2 className="text-lg text-gray-800">
+              <h2 className="text-xl text-gray-800">
                 Jumlah Peserta
               </h2>
               <p className="mt-1 text-5xl font-bold text-gray-800">
@@ -185,13 +185,13 @@ function ParticipantInfo() {
         {interviewParticipant ? (
           <div className="grid h-full grid-cols-3 items-center gap-4">
             <div className="space-y-1">
-              <p className="text-md text-gray-700">
+              <p className="text-xl font-semibold text-gray-700">
                   {interviewParticipant.nama}
               </p>
-              <p className="text-md text-gray-700">
+              <p className="text-xl font-semibold text-gray-700">
                   {interviewParticipant.alamat}
               </p>
-              <p className="text-md text-gray-700">
+              <p className="text-xl font-semibold text-gray-700">
                   {interviewParticipant.perusahaanLulus}
               </p>
             </div>
@@ -199,14 +199,14 @@ function ParticipantInfo() {
               <img
                 src={interviewParticipant.foto}
                 alt={`Foto ${interviewParticipant.nama}`}
-                className="h-48 w-42 object-cover"
+                className="h-48 w-42 object-contain"
                 />
             </div>
             <div className="text-center">
-              <h2 className="text-lg font-semibold text-gray-800">
+              <h2 className="text-2xl font-semibold text-gray-800">
                 面接合格者数
               </h2>
-              <h2 className="text-lg font-semibold text-gray-800">
+              <h2 className="text-xl font-semibold text-gray-800">
                 Lulus Interview
               </h2>
               <p className="mt-1 text-5xl font-bold text-gray-800">
@@ -223,22 +223,22 @@ function ParticipantInfo() {
         {departedParticipant ? (
           <div className="grid h-full grid-cols-3 items-center gap-4">
             <div className="space-y-1">
-              <p className="text-md text-gray-700">
+              <p className="text-xl text-gray-700">
                 <span className="font-semibold">
                   {departedParticipant.nama}
                 </span>
               </p>
-              <p className="text-md text-gray-700">
+              <p className="text-xl font-semibold text-gray-700">
                 <span>
                   {departedParticipant.alamat}
                 </span>
               </p>
-              <p className="text-md text-gray-700">
+              <p className="text-xl font-semibold text-gray-700">
                 <span>
                   {departedParticipant.perusahaanLulus}
                 </span>
               </p>
-              <p className="text-md text-gray-700">
+              <p className="text-lg font-semibold text-gray-700">
                 <span>
                   {departedParticipant.tanggalKeberangkatan}
                 </span>
@@ -248,15 +248,15 @@ function ParticipantInfo() {
               <img
                 src={departedParticipant.foto}
                 alt={`Foto ${departedParticipant.nama}`}
-                className="h-48 w-42 object-cover"
+                className="h-48 w-42 object-contain"
               />
             </div>
             <div className="text-center">
-              <h2 className="text-lg font-semibold text-gray-800">
-                日本への出発者数
+              <h2 className="text-2xl font-semibold text-gray-800">
+                出発者数
               </h2>
               <h2 className="text-lg font-semibold text-gray-800">
-                Jumlah yang Berangkat ke Jepang
+                Jumlah Berangkat
               </h2>
               <p className="mt-1 text-5xl font-bold text-gray-800">
                 {dashboard.totalBerangkat}

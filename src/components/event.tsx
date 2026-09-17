@@ -178,22 +178,22 @@ function Event() {
   return (
     <section className="grid h-full min-h-0 min-w-0 grid-cols-[1fr_3fr] gap-6 overflow-hidden rounded-xl border-2 border-gray-500 bg-white px-6 py-4">
       <div className="flex min-w-0 flex-col justify-center">
-        <h2 className="text-2xl font-normal leading-tight text-gray-900 2xl:text-xl">
+        <h2 className="text-2xl font-normal leading-tight text-gray-900 2xl:text-2xl">
           Berita & Artikel | 記事
         </h2>
 
-        <p className="mt-1 text-sm leading-tight text-gray-600 2xl:text-md">
+        <p className="mt-1 text-sm leading-tight text-gray-600 2xl:text-lg">
           Informasi kegiatan terbaru LPK
         </p>
       </div>
 
       <div className="flex min-h-0 min-w-0 flex-col">
         <div className="flex shrink-0 items-center justify-between gap-4">
-          <span className="rounded-full bg-gray-900 px-3 py-1 text-xm font-semibold text-white 2xl:text-sm">
+          <span className="rounded-full bg-gray-900 px-3 py-1 text-xm font-semibold text-white 2xl:text-md">
             {article.category}
           </span>
 
-          <span className="text-base font-semibold text-gray-900 2xl:text-sm">
+          <span className="text-base font-semibold text-gray-900 2xl:text-md">
             {article.date}
           </span>
         </div>
@@ -202,11 +202,11 @@ function Event() {
           key={article.id}
           className="mt-2 min-h-0 flex-1 overflow-hidden"
         >
-          <h3 className="line-clamp-1 text-xl font-bold leading-tight text-gray-900 2xl:text-lg">
+          <h3 className="line-clamp-1 text-xl font-bold leading-tight text-gray-900 2xl:text-2xl">
             {article.title}
           </h3>
 
-          <p className="mt-3 line-clamp-2 text-xs leading-tight text-gray-700 2xl:text-md">
+          <p className="mt-3 line-clamp-2 text-xs leading-tight text-gray-700 2xl:text-lg">
             {article.description}
           </p>
         </article>
