@@ -7,33 +7,21 @@ import Background from "./assets/img-bg.webp"
 
 function App() {
   return (
-    <main
-      className="font-sekai h-screen w-screen overflow-hidden bg-cover bg-center "
-      style={{ backgroundImage: `url(${Background})` }}
-    >
+    <main className="font-sekai h-screen w-screen overflow-hidden bg-cover bg-center " style={{ backgroundImage: `url(${Background})` }}>
       <div className="flex h-full min-h-0 flex-col  backdrop-blur-md">
-        {/* CONTENT UTAMA */}
         <div className="grid min-h-0 flex-1 grid-cols-3 gap-2">
-          {/* KIRI - 2 BAGIAN */}
           <section className="col-span-2 grid min-h-0 min-w-0 grid-rows-[minmax(0,3fr)_minmax(0,1fr)] gap-2">
-            {/* CHANNEL */}
             <div className="min-h-0 min-w-0">
               <Channel />
             </div>
-
-            {/* EVENT */}
             <div className="min-h-0 min-w-0">
               <Event />
             </div>
           </section>
-
-          {/* KANAN - 1 BAGIAN */}
           <section className="col-span-1 min-h-0 min-w-0">
             <ParticipantInfo />
           </section>
         </div>
-
-        {/* FOOTER */}
         <section className="shrink-0 overflow-hidden">
           <Footer />
           <Contact />
