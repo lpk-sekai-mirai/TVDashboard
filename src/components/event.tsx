@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 interface WordPressArticle {
@@ -38,8 +37,7 @@ interface Article {
   link: string;
 }
 
-const WORDPRESS_API =
-  "https://sekaimiraicemerlang.com/wp-json/wp/v2/posts";
+const WORDPRESS_API = "https://sekaimiraicemerlang.com/wp-json/wp/v2/posts";
 
 function stripHtml(html: string): string {
   const doc = new DOMParser().parseFromString(
@@ -58,9 +56,7 @@ function formatDate(date: string): string {
   });
 }
 
-function mapWordPressArticle(
-  post: WordPressArticle,
-): Article {
+function mapWordPressArticle( post: WordPressArticle,) : Article {
   const terms = post._embedded?.["wp:term"]?.flat() ?? [];
 
   const category =
@@ -116,7 +112,6 @@ function Event() {
         setLoading(false);
       }
     };
-
     fetchArticles();
   }, []);
 
@@ -192,16 +187,12 @@ function Event() {
           <span className="rounded-full bg-gray-900 px-3 py-1 text-xm font-semibold text-white 2xl:text-md">
             {article.category}
           </span>
-
           <span className="text-base font-semibold text-gray-900 2xl:text-md">
             {article.date}
           </span>
         </div>
 
-        <article
-          key={article.id}
-          className="mt-2 min-h-0 flex-1 overflow-hidden"
-        >
+        <article key={article.id} className="mt-2 min-h-0 flex-1 overflow-hidden">
           <h3 className="line-clamp-1 text-xl font-bold leading-tight text-gray-900 2xl:text-2xl">
             {article.title}
           </h3>
@@ -212,11 +203,7 @@ function Event() {
         </article>
 
         <div className="mt-2 flex shrink-0 items-center justify-between">
-          <button
-            onClick={prevArticle}
-            className="rounded-lg bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 transition hover:bg-gray-200"
-            aria-label="Artikel sebelumnya"
-          >
+          <button onClick={prevArticle} className="rounded-lg bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 transition hover:bg-gray-200" aria-label="Artikel sebelumnya">
             ←
           </button>
 
@@ -238,11 +225,7 @@ function Event() {
             ))}
           </div>
 
-          <button
-            onClick={nextArticle}
-            className="rounded-lg bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 transition hover:bg-gray-200"
-            aria-label="Artikel berikutnya"
-          >
+          <button onClick={nextArticle} className="rounded-lg bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 transition hover:bg-gray-200" aria-label="Artikel berikutnya">
             →
           </button>
         </div>

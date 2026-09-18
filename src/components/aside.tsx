@@ -5,6 +5,9 @@ interface Participant {
   nama: string;
   alamat: string;
   perusahaanLulus: string;
+  namaJepang: string;
+  alamatJepang: string;
+  perusahaanLulusJepang: string;
   tanggalKeberangkatan: string;
   umur: number;
   foto: string;
@@ -21,11 +24,14 @@ const API_URL = "https://be-04mm.onrender.com";
 
 function ParticipantInfo() {
   const [participants, setParticipants] = useState<Participant[]>([]);
-  const [dashboard, setDashboard] = useState<Dashboard>({
+
+  const [dashboard, setDashboard] = useState<Dashboard>(
+  {
     total: 0,
     totalLulusInterview: 0,
     totalBerangkat: 0,
   });
+
   const [participantIndex, setParticipantIndex] = useState(0);
   const [interviewIndex, setInterviewIndex] = useState(0);
   const [departedIndex, setDepartedIndex] = useState(0);
@@ -69,7 +75,7 @@ function ParticipantInfo() {
 
   const interviewPassed = participants.filter(
     (participant) =>
-      participant.statusInterview.toLowerCase() === "lulus",
+      participant.statusInterview?.toLowerCase() === "lulus",
   );
 
   const departedParticipants = participants.filter(
