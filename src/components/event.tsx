@@ -150,7 +150,7 @@ function Event() {
 
   if (loading) {
     return (
-      <section className="flex h-full items-center justify-center overflow-hidden rounded-xl border-2 border-gray-500 bg-white px-6 py-4">
+      <section className="flex h-full items-center justify-center overflow-hidden rounded-xl border-2 border-gray-500 bg-white px-6 py-4 md:text-[10px]">
         <p className="text-gray-600">
           Memuat berita terbaru...
         </p>
@@ -160,7 +160,7 @@ function Event() {
 
   if (error || articles.length === 0) {
     return (
-      <section className="flex h-full items-center justify-center overflow-hidden rounded-xl border-2 border-gray-500 bg-white px-6 py-4">
+      <section className="flex h-full items-center justify-center overflow-hidden rounded-xl border-2 border-gray-500 bg-white px-6 py-4 md:text-[10px]">
         <p className="text-gray-600">
           {error || "Belum ada berita tersedia"}
         </p>
@@ -171,51 +171,58 @@ function Event() {
   const article = articles[currentIndex];
 
   return (
-    <section className="grid h-full min-h-0 min-w-0 grid-cols-[1fr_3fr] gap-6 overflow-hidden rounded-xl border-2 border-gray-500 bg-white px-6 py-4">
+    <section 
+      className="grid h-full min-h-0 min-w-0 grid-cols-[1fr_3fr] gap-6 overflow-hidden lg:rounded-xl lg:border-2 border-gray-500 bg-white 
+      lg:px-6 
+      lg:py-4 
+      
+      md:px-2 
+      md:py-1 
+      md:rounded-md 
+      md:border-1">
       <div className="flex min-w-0 flex-col justify-center">
-        <h2 className="text-2xl font-normal leading-tight text-gray-900 2xl:text-2xl">
+        <h2 className="lg:text-xl font-normal leading-tight text-gray-900 md:text-[8px]">
           Berita & Artikel | 記事
         </h2>
-
-        <p className="mt-1 text-sm leading-tight text-gray-600 2xl:text-lg">
+        <p className="mt-1 lg:text-sm leading-tight text-gray-600 md:text-[6px]" >
           Informasi kegiatan terbaru LPK
         </p>
       </div>
 
       <div className="flex min-h-0 min-w-0 flex-col">
         <div className="flex shrink-0 items-center justify-between gap-4">
-          <span className="rounded-full bg-gray-900 px-3 py-1 text-xm font-semibold text-white 2xl:text-md">
+          <span className="rounded-full bg-gray-900 lg:px-3 lg:py-1 font-semibold text-white lg:text-[12px] md:text-[6px] md:px-1.5 md:py-[2px]">
             {article.category}
           </span>
-          <span className="text-base font-semibold text-gray-900 2xl:text-md">
+          <span className="font-semibold text-gray-900 lg:text-base md:text-[4px]">
             {article.date}
           </span>
         </div>
 
-        <article key={article.id} className="mt-2 min-h-0 flex-1 overflow-hidden">
-          <h3 className="line-clamp-1 text-xl font-bold leading-tight text-gray-900 2xl:text-2xl">
+        <article key={article.id} className="lg:mt-2 md:mt-1 min-h-0 flex-1 overflow-hidden">
+          <h3 className="line-clamp-1 lg:text-2xl font-bold leading-tight text-gray-900 md:text-[8px]">
             {article.title}
           </h3>
 
-          <p className="mt-3 line-clamp-2 text-xs leading-tight text-gray-700 2xl:text-lg">
+          <p className="lg:mt-2 md:mt-0 lg:line-clamp-2 md:line-clamp-2 lg:text-lg leading-tight text-gray-700 md:text-[6px]">
             {article.description}
           </p>
         </article>
 
-        <div className="mt-2 flex shrink-0 items-center justify-between">
-          <button onClick={prevArticle} className="rounded-lg bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 transition hover:bg-gray-200" aria-label="Artikel sebelumnya">
+        <div className="lg:mt-2 md:mt-0 flex shrink-0 items-center justify-between">
+          <button onClick={prevArticle} className="rounded-lg bg-gray-100 px-3 lg:py-1 text-sm font-semibold text-gray-700 transition hover:bg-gray-200 md:text-[8px] md:px-2 md:py-0" aria-label="Artikel sebelumnya">
             ←
           </button>
 
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center justify-center gap-2 md:gap-1">
             {articles.map((item, index) => (
               <button
                 key={item.id}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
+                className={`lg:h-1.5 rounded-full transition-all duration-300 md:h-[4px] ${
                   index === currentIndex
-                    ? "w-6 bg-primary-500"
-                    : "w-1.5 bg-gray-300"
+                    ? "lg:w-6 md:w-[12px] bg-primary-500"
+                    : "lg:w-2 md:w-[4px] bg-gray-300"
                 }`}
                 aria-label={`Artikel ${index + 1}`}
                 aria-current={
@@ -225,7 +232,7 @@ function Event() {
             ))}
           </div>
 
-          <button onClick={nextArticle} className="rounded-lg bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 transition hover:bg-gray-200" aria-label="Artikel berikutnya">
+          <button onClick={nextArticle} className="rounded-lg bg-gray-100 px-3 lg:py-1 text-sm font-semibold text-gray-700 transition hover:bg-gray-200 md:text-[8px] md:px-2 md:py-0" aria-label="Artikel berikutnya">
             →
           </button>
         </div>

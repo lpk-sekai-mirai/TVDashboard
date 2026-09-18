@@ -7,10 +7,12 @@ import Background from "./assets/img-bg.webp"
 
 function App() {
   return (
-    <main className="font-sekai h-screen w-screen overflow-hidden bg-cover bg-center " style={{ backgroundImage: `url(${Background})` }}>
-      <div className="flex h-full min-h-0 flex-col  backdrop-blur-md">
-        <div className="grid min-h-0 flex-1 grid-cols-3 gap-2">
-          <section className="col-span-2 grid min-h-0 min-w-0 grid-rows-[minmax(0,3fr)_minmax(0,1fr)] gap-2">
+    <main 
+    className="font-sekai h-screen w-screen overflow-hidden bg-cover bg-center" 
+    style={{ backgroundImage: `url(${Background})` }}>
+      <div className="flex h-full min-h-0 flex-col lg:backdrop-blur-sm md:backdrop-blur-xs">
+        <div className="grid min-h-0 flex-1 grid-cols-3 gap-2 md:gap-1">
+          <section className="col-span-2 grid min-h-0 min-w-0 grid-rows-[minmax(0,3fr)_minmax(0,1fr)] gap-2 md:gap-1">
             <div className="min-h-0 min-w-0">
               <Channel />
             </div>

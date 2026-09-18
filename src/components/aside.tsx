@@ -151,15 +151,17 @@ function ParticipantInfo() {
       : null;
 
   return (
-    <aside className="flex h-full flex-col gap-2">
-      <section className="px-8 flex-1 rounded-lg backdrop-blur-sm bg-white shadow-md border border-black">
+    <aside className="flex h-full flex-col gap-2 md:gap-1">
+      <section className="flex-1 lg:rounded-lg md:rounded-sm bg-white lg:px-4 lg:py-0 shadow-md border border-black md:px-3 md:py-0 ">
         {participant ? (
           <div className="grid h-full grid-cols-3 items-center gap-4">
-            <div className="space-y-1">
-              <p className="text-2xl font-semibold text-gray-700">
+            <div className="lg:space-y-1 md:space-y-0">
+              <p className="font-semibold text-gray-700 
+              lg:text-xl md:text-[8px]">
                   {participant.nama}
               </p>
-              <p className="text-2xl font-semibold text-gray-700">
+              <p className="font-semibold text-gray-700 
+              lg:text-xl md:text-[8px]">
                   {participant.alamat}
               </p>
             </div>
@@ -167,17 +169,19 @@ function ParticipantInfo() {
               <img
                 src={participant.foto}
                 alt={`Foto ${participant.nama}`}
-                className="h-48 w-42 object-contain"
+                className="lg:h-38 lg:w-32 object-contain 
+                md:h-12 
+                md:w-8"
               />
             </div>
             <div className="text-center">
-              <h2 className="text-2xl font-semibold text-gray-800">
+              <h2 className="font-semibold text-gray-800 lg:text-2xl md:text-[10px]">
                 参加者数
               </h2>
-              <h2 className="text-xl text-gray-800">
+              <h2 className="text-xl text-gray-800 lg:text-xl md:text-[6px]">
                 Jumlah Peserta
               </h2>
-              <p className="mt-1 text-5xl font-bold text-gray-800">
+              <p className="mt-1 lg:text-5xl font-bold text-gray-800 md:text-sm">
                 {dashboard.total}
               </p>
             </div>
@@ -187,17 +191,17 @@ function ParticipantInfo() {
         )}
       </section>
 
-      <section className="flex-1 rounded-lg backdrop-blur-sm bg-white px-8 shadow-md border border-black">
+      <section className="flex-1 lg:rounded-lg md:rounded-sm bg-white lg:px-4 lg:py-0 shadow-md border border-black md:px-3 md:py-0">
         {interviewParticipant ? (
           <div className="grid h-full grid-cols-3 items-center gap-4">
-            <div className="space-y-1">
-              <p className="text-xl font-semibold text-gray-700">
+            <div className="lg:space-y-1 md:space-y-0">
+              <p className="font-semibold text-gray-700 lg:text-xl md:text-[6px]">
                   {interviewParticipant.nama}
               </p>
-              <p className="text-xl font-semibold text-gray-700">
+              <p className="font-semibold text-gray-700 lg:text-xl md:text-[6px]">
                   {interviewParticipant.alamat}
               </p>
-              <p className="text-xl font-semibold text-gray-700">
+              <p className="font-semibold text-gray-700 lg:text-xl md:text-[6px]">
                   {interviewParticipant.perusahaanLulus}
               </p>
             </div>
@@ -205,17 +209,19 @@ function ParticipantInfo() {
               <img
                 src={interviewParticipant.foto}
                 alt={`Foto ${interviewParticipant.nama}`}
-                className="h-48 w-42 object-contain"
+                className="lg:h-38 lg:w-32 object-contain 
+                md:h-12 
+                md:w-8"
                 />
             </div>
             <div className="text-center">
-              <h2 className="text-2xl font-semibold text-gray-800">
+              <h2 className="font-semibold text-gray-800 lg:text-2xl md:text-[9px]">
                 面接合格者数
               </h2>
-              <h2 className="text-xl font-semibold text-gray-800">
+              <h2 className="font-semibold text-gray-800 lg:text-xl md:text-[8px]">
                 Lulus Interview
               </h2>
-              <p className="mt-1 text-5xl font-bold text-gray-800">
+              <p className="mt-1 font-bold text-gray-800 lg:text-5xl md:text-lg">
                 {dashboard.totalLulusInterview}
               </p>
             </div>
@@ -225,26 +231,26 @@ function ParticipantInfo() {
         )}
       </section>
 
-      <section className="flex-1 rounded-lg backdrop-blur-sm bg-white px-8 shadow-md border border-black">
+      <section className="flex-1 lg:rounded-lg md:rounded-sm bg-white lg:px-4 lg:py-0 shadow-md border border-black md:px-3 md:py-0 ">
         {departedParticipant ? (
           <div className="grid h-full grid-cols-3 items-center gap-4">
-            <div className="space-y-1">
-              <p className="text-xl text-gray-700">
+            <div className="lg:space-y-1 md:space-y-0">
+              <p className="text-xl text-gray-700 lg:text-xl md:text-[6px]">
                 <span className="font-semibold">
                   {departedParticipant.nama}
                 </span>
               </p>
-              <p className="text-xl font-semibold text-gray-700">
+              <p className="text-xl font-semibold text-gray-700 lg:text-xl md:text-[6px]">
                 <span>
                   {departedParticipant.alamat}
                 </span>
               </p>
-              <p className="text-xl font-semibold text-gray-700">
+              <p className="text-xl font-semibold text-gray-700 lg:text-xl md:text-[6px]">
                 <span>
                   {departedParticipant.perusahaanLulus}
                 </span>
               </p>
-              <p className="text-lg font-semibold text-gray-700">
+              <p className="text-lg font-semibold text-gray-700 lg:text-xl md:text-[6px]">
                 <span>
                   {departedParticipant.tanggalKeberangkatan}
                 </span>
@@ -254,17 +260,19 @@ function ParticipantInfo() {
               <img
                 src={departedParticipant.foto}
                 alt={`Foto ${departedParticipant.nama}`}
-                className="h-48 w-42 object-contain"
+                className="lg:h-38 lg:w-32 object-contain 
+                md:h-12 
+                md:w-8"
               />
             </div>
             <div className="text-center">
-              <h2 className="text-2xl font-semibold text-gray-800">
+              <h2 className="text-2xl font-semibold text-gray-800 lg:text-xl md:text-[8px]">
                 出発者数
               </h2>
-              <h2 className="text-lg font-semibold text-gray-800">
+              <h2 className="text-lg font-semibold text-gray-800 lg:text-xl md:text-[6px]">
                 Jumlah Berangkat
               </h2>
-              <p className="mt-1 text-5xl font-bold text-gray-800">
+              <p className="mt-1 lg:text-5xl font-bold text-gray-800 md:text-lg">
                 {dashboard.totalBerangkat}
               </p>
             </div>
