@@ -181,10 +181,10 @@ function Event() {
       md:rounded-md 
       md:border-1">
       <div className="flex min-w-0 flex-col justify-center">
-        <h2 className="lg:text-xl font-normal leading-tight text-gray-900 md:text-[8px]">
+        <h2 className="lg:text-xl font-normal leading-tight text-gray-900 md:text-xs">
           Berita & Artikel | 記事
         </h2>
-        <p className="mt-1 lg:text-sm leading-tight text-gray-600 md:text-[6px]" >
+        <p className="mt-1 lg:text-sm leading-tight text-gray-600 md:text-[9px]" >
           Informasi kegiatan terbaru LPK
         </p>
       </div>
@@ -200,11 +200,11 @@ function Event() {
         </div>
 
         <article key={article.id} className="lg:mt-2 md:mt-1 min-h-0 flex-1 overflow-hidden">
-          <h3 className="line-clamp-1 lg:text-2xl font-bold leading-tight text-gray-900 md:text-[8px]">
+          <h3 className="line-clamp-1 lg:text-2xl font-bold leading-tight text-gray-900 md:text-sm">
             {article.title}
           </h3>
 
-          <p className="lg:mt-2 md:mt-0 lg:line-clamp-2 md:line-clamp-2 lg:text-lg leading-tight text-gray-700 md:text-[6px]">
+          <p className="lg:mt-2 md:mt-0 lg:line-clamp-2 md:line-clamp-2 lg:text-lg leading-tight text-gray-700 md:text-[10px]">
             {article.description}
           </p>
         </article>
