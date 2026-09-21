@@ -6,9 +6,9 @@ interface Channel {
 }
 
 const channels: Channel[] = [
+  { name: "NHK Japan", videoId: "IimtbuqYIE8" },
   { name: "Kompas TV", videoId: "DOOrIxw5xOw" },
   { name: "CNN Indonesia", videoId: "PDDOkUq33Sw" },
-  { name: "NHK Japan", videoId: "IimtbuqYIE8" },
 ];
 
 function Channel() {
