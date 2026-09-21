@@ -29,7 +29,6 @@ function Channel() {
       clearTimeout(hideTimer.current);
     }
 
-    // setelah 4 detik ngilang
     hideTimer.current = setTimeout(() => {
       setShowChannels(false);
     }, 4000);
@@ -136,7 +135,6 @@ function Channel() {
             {channels.map((item, index) => (
               <button
                 key={item.videoId}
-                // onClick={() => setActiveChannel(index)}
                 onClick={(event) => {
                   event.stopPropagation();
                   handleChannelChange(index);

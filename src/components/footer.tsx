@@ -33,10 +33,20 @@ function Footer() {
             <img
               src={Logo}
               alt="Logo LPK Sekai Mirai"
-              className="lg:h-auto lg:w-56 object-contain md:w-42"
+              className="lg:h-auto object-contain 
+              
+              sm:w-24
+              md:w-38
+              2xl:w-64
+              "
             />
           </div>
-          <div className="shrink-0 text-right font-semibold leading-tight lg:text-2xl md:text-md">
+          <div className="shrink-0 text-right font-semibold leading-tight 
+          
+          sm:text-sm
+          md:text-md
+          lg:text-2xl 
+          ">
             {tanggal}
             <br />
             {waktu} WITA
