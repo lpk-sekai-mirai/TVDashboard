@@ -13,9 +13,9 @@ export type Language = "id" | "ja";
 function App() {
   const [language, setLanguage] = useState<Language>("id");
 
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "id" ? "ja" : "id"));
-  }
+  // const toggleLanguage = () => {
+  //   setLanguage((prev) => (prev === "id" ? "ja" : "id"));
+  // }
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -71,7 +71,7 @@ function App() {
           </section>
         </div>
         <section className="shrink-0 overflow-hidden">
-          <Footer language={language} onToggleLanguage={toggleLanguage} />
+          <Footer />
           <Contact />
         </section>
       </div>

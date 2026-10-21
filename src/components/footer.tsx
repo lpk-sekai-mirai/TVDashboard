@@ -1,15 +1,15 @@
 import Logo from "../assets/logoFull.webp";
 import { useEffect, useState } from "react";
-import type { Language } from "../App";
+// import type { Language } from "../App";
 
-interface FooterProps {
-  language: Language;
-  onToggleLanguage: () => void;
-}
+// interface FooterProps {
+//   language: Language;
+//   onToggleLanguage: () => void;
+// }
 
-function Footer({ language, onToggleLanguage }: FooterProps) {
+function Footer() {
   const [dateTime, setDateTime] = useState(new Date());
-  
+
   useEffect(() => {
     const timer = setInterval(() => {
       setDateTime(new Date());

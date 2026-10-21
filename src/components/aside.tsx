@@ -13,7 +13,7 @@ export interface Participant {
   foto:                  string;
   umur:                  number;
   telp:                  string;
-  tanggalKeberangkatan:  Date;
+  tanggalKeberangkatan:  string;
   statusInterview:       string;
   createdAt:             Date;
   updatedAt:             Date;
