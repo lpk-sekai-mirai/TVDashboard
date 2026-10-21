@@ -59,7 +59,7 @@ function App() {
               <Channel />
             </div>
             <div className="min-h-0 min-w-0">
-              <Event language={language}  />
+              <Event />
             </div>
           </section>
           <section className="col-span-1 min-h-0 min-w-0">
