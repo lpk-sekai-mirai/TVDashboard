@@ -1,7 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-// import { MdSettingsRemote } from "react-icons/md";
-// import type { TimerOptions } from "timers";
-// import { setTimeout } from "timers/promises";
 
 interface Channel {
   name: string;
@@ -19,7 +16,7 @@ function Channel() {
   const [showChannels, setShowChannels] = useState(false);
 
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  
+
   const active = channels[activeChannel];
 
   const showChannelSelector = () => {
@@ -81,7 +78,6 @@ function Channel() {
           allowFullScreen
         />
 
-        {/* LIVE INDICATOR */}
         <div
           className="
             absolute left-2 lg:top-2 z-20
@@ -107,7 +103,6 @@ function Channel() {
           LIVE
         </div>
 
-        {/* CHANNEL SELECTOR */}
         <div
           className={`
             absolute bottom-2 left-2 right-2
@@ -119,12 +114,12 @@ function Channel() {
 
             ${
               showChannels
-              ? "translate-y-0 opacity-100"
-              : "pointer-events-none translate-y-3 opacity-0"
+                ? "translate-y-0 opacity-100"
+                : "pointer-events-none translate-y-3 opacity-0"
             }
           `}
         >
-          <div 
+          <div
             className="
               flex flex-wrap 
               justify-center 

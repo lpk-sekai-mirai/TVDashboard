@@ -1,9 +1,15 @@
 import Logo from "../assets/logoFull.webp";
 import { useEffect, useState } from "react";
+import type { Language } from "../App";
 
-function Footer() {
+interface FooterProps {
+  language: Language;
+  onToggleLanguage: () => void;
+}
+
+function Footer({ language, onToggleLanguage }: FooterProps) {
   const [dateTime, setDateTime] = useState(new Date());
-
+  
   useEffect(() => {
     const timer = setInterval(() => {
       setDateTime(new Date());
@@ -47,6 +53,7 @@ function Footer() {
           md:text-md
           lg:text-2xl 
           ">
+            
             {tanggal}
             <br />
             {waktu} WITA

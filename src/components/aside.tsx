@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
+import type { Language } from "../App";
 
-interface Participant {
-  id: string;
-  nama: string;
-  alamat: string;
-  perusahaanLulus: string;
-  namaJepang: string;
-  alamatJepang: string;
+export interface Participant {
+  uid:                   string;
+  id:                    string;
+  nama:                  string;
+  alamat:                string;
+  perusahaanLulus:       string;
+  namaJepang:            string;
+  alamatJepang:          string;
   perusahaanLulusJepang: string;
-  tanggalKeberangkatan: string;
-  umur: number;
-  foto: string;
-  statusInterview: string;
+  foto:                  string;
+  umur:                  number;
+  telp:                  string;
+  tanggalKeberangkatan:  Date;
+  statusInterview:       string;
+  createdAt:             Date;
+  updatedAt:             Date;
 }
 
 interface Dashboard {
@@ -22,7 +27,11 @@ interface Dashboard {
 
 const API_URL = "https://be-04mm.onrender.com";
 
-function ParticipantInfo() {
+interface ParticipantInfoProps {
+  language: Language;
+}
+
+function ParticipantInfo({ language }: ParticipantInfoProps) {
   const [participants, setParticipants] = useState<Participant[]>([]);
 
   const [dashboard, setDashboard] = useState<Dashboard>(
@@ -37,6 +46,8 @@ function ParticipantInfo() {
   const [departedIndex, setDepartedIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
+  const isJapanese = language === "ja";
 
   useEffect(() => {
     const getData = async () => {
@@ -152,6 +163,8 @@ function ParticipantInfo() {
 
   return (
     <aside className="flex h-full flex-col gap-2 md:gap-1 sm:gap-0.5">
+      <div className="flex shrink-0 justify-end">
+      </div>
       <section className="flex-1 lg:rounded-lg md:rounded-sm bg-white shadow-md border border-black 
       sm:px-2
       sm:px-0
@@ -170,14 +183,18 @@ function ParticipantInfo() {
               md:text-[9px]
               sm:text-[10px]
               ">
-                  {participant.nama}
+                {isJapanese
+                  ? participant.namaJepang || participant.nama : participant.nama
+                }
               </p>
               <p className="font-semibold text-gray-700 
               2xl:text-xl 
               md:text-[9px]
               sm:text-[10px]
               ">
-                  {participant.alamat}
+                  {isJapanese
+                  ? participant.alamatJepang || participant.alamat : participant.alamat
+                }
               </p>
             </div>
             <div className="flex justify-center">
@@ -220,10 +237,10 @@ function ParticipantInfo() {
           <div className="grid h-full grid-cols-3 items-center gap-4">
             <div className="2xl:space-y-1 md:space-y-0">
               <p className="font-semibold text-gray-700 lg:text-xl md:text-[9px] sm:text-[10px]">
-                  {interviewParticipant.nama}
+                  {isJapanese ? interviewParticipant.namaJepang || interviewParticipant.nama : interviewParticipant.nama}
               </p>
               <p className="font-semibold text-gray-700 lg:text-xl md:text-[9px] sm:text-[10px]">
-                  {interviewParticipant.alamat}
+                  {isJapanese ? interviewParticipant.alamatJepang || interviewParticipant.alamat : interviewParticipant.alamat}
               </p>
               <p className="font-semibold text-gray-700 lg:text-xl md:text-[9px] sm:text-[10px]">
                   {interviewParticipant.perusahaanLulus}
@@ -262,17 +279,17 @@ function ParticipantInfo() {
             <div className="2xl:space-y-1 md:space-y-0">
               <p className="text-xl text-gray-700 lg:text-xl md:text-[9px] sm:text-[8px]">
                 <span className="font-semibold">
-                  {departedParticipant.nama}
+                  {isJapanese ? departedParticipant.namaJepang || departedParticipant.nama : departedParticipant.nama}
                 </span>
               </p>
               <p className="text-xl font-semibold text-gray-700 lg:text-xl md:text-[9px] sm:text-[8px]">
                 <span>
-                  {departedParticipant.alamat}
+                  {isJapanese ? departedParticipant.alamatJepang || departedParticipant.alamat : departedParticipant.alamat}
                 </span>
               </p>
               <p className="text-xl font-semibold text-gray-700 lg:text-xl md:text-[9px] sm:text-[8px]">
                 <span>
-                  {departedParticipant.perusahaanLulus}
+                  {isJapanese ? departedParticipant.perusahaanLulusJepang || departedParticipant.perusahaanLulus : departedParticipant.perusahaanLulus}
                 </span>
               </p>
               <p className="text-lg font-semibold text-gray-700 lg:text-xl md:text-[9px] sm:text-[8px]">
