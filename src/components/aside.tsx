@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Language } from "../App";
+import imgUser from "../assets/default-img.png";
 
 export interface Participant {
   uid:                   string;
@@ -163,8 +164,6 @@ function ParticipantInfo({ language }: ParticipantInfoProps) {
 
   return (
     <aside className="flex h-full flex-col gap-2 md:gap-1 sm:gap-0.5">
-      <div className="flex shrink-0 justify-end">
-      </div>
       <section className="flex-1 lg:rounded-lg md:rounded-sm bg-white shadow-md border border-black 
       sm:px-2
       sm:px-0
@@ -199,7 +198,7 @@ function ParticipantInfo({ language }: ParticipantInfoProps) {
             </div>
             <div className="flex justify-center">
               <img
-                src={participant.foto}
+                src={participant.foto || imgUser}
                 alt={`Foto ${participant.nama}`}
                 className="object-contain 
                 2xl:h-64 2xl:w-58 
@@ -248,7 +247,7 @@ function ParticipantInfo({ language }: ParticipantInfoProps) {
             </div>
             <div className="flex justify-center">
               <img
-                src={interviewParticipant.foto}
+                src={interviewParticipant.foto || imgUser}
                 alt={`Foto ${interviewParticipant.nama}`}
                 className=" object-contain
                 2xl:h-64 2xl:w-58 
@@ -300,7 +299,7 @@ function ParticipantInfo({ language }: ParticipantInfoProps) {
             </div>
             <div className="flex justify-center">
               <img
-                src={departedParticipant.foto}
+                src={departedParticipant.foto || imgUser}
                 alt={`Foto ${departedParticipant.nama}`}
                 className="object-contain 
                 2xl:h-64 2xl:w-58

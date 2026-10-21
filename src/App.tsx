@@ -13,10 +13,6 @@ export type Language = "id" | "ja";
 function App() {
   const [language, setLanguage] = useState<Language>("id");
 
-  // const toggleLanguage = () => {
-  //   setLanguage((prev) => (prev === "id" ? "ja" : "id"));
-  // }
-
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.defaultPrevented || event.repeat) {
@@ -63,7 +59,7 @@ function App() {
               <Channel />
             </div>
             <div className="min-h-0 min-w-0">
-              <Event />
+              <Event language={language}  />
             </div>
           </section>
           <section className="col-span-1 min-h-0 min-w-0">

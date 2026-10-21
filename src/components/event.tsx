@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import type { Language } from "../App";
 
 interface WordPressArticle {
   id: number;
@@ -77,11 +78,18 @@ function mapWordPressArticle( post: WordPressArticle,) : Article {
   };
 }
 
-function Event() {
+interface EventProps {
+  language: Language;
+}
+
+function Event({ language }: EventProps) {
   const [articles, setArticles] = useState<Article[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
+  const isJapanese = language === "ja";
+
 
   useEffect(() => {
     const fetchArticles = async () => {
